@@ -1,117 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>AuditorTax</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-      text-align: center;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-    h2 {
-      color: #818cf8;
-      margin-bottom: 20px;
-    }
-    p {
-      color: #cbd5f5;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      border-radius: 10px;
-      background: #6366f1;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .section {
-      margin-top: 40px;
-    }
-    .card {
-      background: rgba(255,255,255,0.05);
-      padding: 15px;
-      margin: 10px;
-      border-radius: 10px;
-    }
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 6px;
-      border: none;
-    }
-    button {
-      padding: 12px;
-      width: 95%;
-      background: #6366f1;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-size: 16px;
-    }
-  </style>
-</head>
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 
-<body>
+export default function AuditorTaxLanding() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-<div class="container">
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
 
-  <h1>AuditorTax</h1>
-  <h2>Compliance-First Payroll & GST Platform</h2>
-  <p>
-    Manage payroll, PF, ESIC, Professional Tax, and GST reconciliation  
-    with complete audit trail.
-  </p>
+      {/* Navbar */}
+      <header className="flex justify-between items-center p-6 shadow-sm sticky top-0 bg-white z-50">
+        <h1 className="text-2xl font-bold">AuditorTax</h1>
 
-  <a href="#" class="btn">Book Demo</a>
-  <a href="#" class="btn">Learn More</a>
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex gap-6 text-sm font-medium">
+          <a href="#">Home</a>
+          <a href="#">Our Values</a>
+          <a href="#">Services</a>
+          <a href="#">Contact Us</a>
+        </nav>
 
-  <div class="section">
-    <h2>Features</h2>
-    <div class="card">Deterministic Payroll</div>
-    <div class="card">PF, ESIC & PT Compliance</div>
-    <div class="card">GSTR-2B Reconciliation</div>
-    <div class="card">Multi-Client Management</div>
-    <div class="card">Audit-Ready Logs</div>
-  </div>
-
-  <div class="section">
-    <h2>Who It’s For</h2>
-    <div class="card">Auditors & CAs</div>
-    <div class="card">Compliance Managers</div>
-    <div class="card">Employers</div>
-    <div class="card">Employees</div>
-  </div>
-
-  <div class="section">
-    <h2>Request a Demo</h2>
-    <form>
-      <input placeholder="Name"><br>
-      <input placeholder="Email"><br>
-      <input placeholder="Phone"><br>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-  <div class="section">
-    <p>Built for compliance. Designed for accuracy. Ready for audit.</p>
-  </div>
-
-</div>
-
-</body>
-</html>
+        {/* Right Buttons */}
+        <div className="flex items-center gap-3">
+          <Button variant="outline" className="hidden md:block">Login</Button>
+          <
